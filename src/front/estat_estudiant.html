@@ -13,33 +13,31 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-      </div>
-    </nav>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="notificar_infectat.html">Notificar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"  href="#">Estat actual</a>
+            </li>
+        </ul>
+        Cercar estudiant: &ensp;
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="nom.cognom" aria-label="Cerca">
+          <button class="btn btn-outline-success" type="submit">Cerca</button>
+        </form>
+        &ensp; &ensp; &ensp; &ensp;
+        <a href="admin_login.html" class="btn btn-outline-danger" type="button">Desconnectar-se</a>
+    </div>
+  </div>
+</nav>
 
   <div class="contenidor">
-  <p> Benvingut al portal d'accés de gestió de CoBits. <br> Si us plau, introdueix les credencials d'accés: </p>
+    L'estudiant $$NOM.COGNOM$$ està $$ESTATUS: CONFINAT/NO CONFINAT$$.
+  </div>
 
- <form>
-  <div class="form-group row">
-    <label for="inputUser" class="col-sm-2 col-form-label">Nom d'usuari</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputUser" placeholder="nom.cognom">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Contrasenya</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword" placeholder="contrasenya">
-    </div>
-  </div>
-  </form> 
-  <div class="form-group row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-10">
-      <a href="notificar_infectat.html" type="submit" class="btn btn-primary">Accedir</a>
-    </div>
-  </div>
-    </div>
+</div>
 
-  </body>
+</body>
 </html>
