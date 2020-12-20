@@ -40,7 +40,7 @@
 </nav>
 
   <div class="contenidor">
-    L'estudiant %%NOM.COGNOM%% està %%ESTAT%%.
+    L'estudiant $$NOM.COGNOM$$ està $$ESTATUS: CONFINAT/NO CONFINAT$$.
   </div>
 
 </div>
