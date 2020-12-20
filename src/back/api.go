@@ -35,7 +35,22 @@ func apiCercarEstudiantEndpoint(w http.ResponseWriter, r *http.Request){
 }
 
 func apiEstatActualEndpoint(w http.ResponseWriter, r *http.Request){
-  http.ServeFile(w, r, PROJECT_FOLDER +  "/front/estat_actual.html")  
+  exec.Command("cp", PROJECT_FOLDER+ "/front/estat_actual.html", PROJECT_FOLDER + "/front/estat_actual_2.html").Run()
+  
+  st := ""
+  a := 0
+  for k, v := range estatAlumne {
+    if v == "POSITIU" || v == "CONTACTE AMB POSITIU" {
+      a++
+      st+= "<tr><th> " + k + " </th></tr>"
+    }
+  }
+
+  exec.Command("sed", "-i", "s/%%NUMERO%%/" + strconv.Itoa(a) + "/g", PROJECT_FOLDER +"/front/estat_actual_2.html").Run()
+  exec.Command("sed", "-i", "s|%%LLISTA%%|" + st + "|g", PROJECT_FOLDER +"/front/estat_actual_2.html").Run()
+
+
+  http.ServeFile(w, r, PROJECT_FOLDER +  "/front/estat_actual_2.html")  
   
 }
 
@@ -51,6 +66,16 @@ func apiEnviarNotificarInfectat(w http.ResponseWriter, r *http.Request){
   }
 
   fmt.Println(t)
+
+  cosa,_:=time.ParseDuration("-336h")
+  pcrmenyscatorze:=t.Add(cosa)
+  for k, v := range contactes[usuari] {
+    if v.After(pcrmenyscatorze){
+      estatAlumne[k]="CONTACTE AMB POSITIU"
+    }
+  }
+
+  estatAlumne[usuari]="POSITIU"
 
   http.ServeFile(w, r, PROJECT_FOLDER + "/front/notificar_infectat.html")
   

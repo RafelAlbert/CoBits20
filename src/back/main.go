@@ -16,7 +16,7 @@ func main() {
   router.HandleFunc("/admin", apiAdminEndpoint).Methods("GET")
   router.HandleFunc("/sentarse", serveLogin).Methods("GET")
   router.HandleFunc("/callback", serveOAuthCallback).Methods("GET")
-  router.HandleFunc("/notificar", apiNotificarEndpoint).Methods("GET")
+  router.HandleFunc("/enviarNotificarInfectat", apiNotificarEndpoint).Methods("GET")
   router.HandleFunc("/notificarInfectat", apiEnviarNotificarInfectat).Methods("POST")
   router.HandleFunc("/cercarEstudiant", apiCercarEstudiantEndpoint).Methods("GET")
   router.HandleFunc("/estatActual", apiEstatActualEndpoint).Methods("GET")

@@ -17,7 +17,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
                 <form method="get" action="notificar_infectat">
-              <button class="btn btn-outline-secondary" type="submit" formaction="/enviarNotificarInfectar">Notificar</button>
+              <button class="btn btn-outline-secondary" type="submit" formaction="/enviarNotificarInfectat">Notificar</button>
                 </form>
             </li>
             <li class="nav-item">
@@ -40,7 +40,7 @@
 </nav>
 
 <div class="contenidor">
-    <p> Número d'estudiants confinats: $$NUMERO$$ </p>
+    <p> Número d'estudiants confinats: %%NUMERO%% </p>
     <p> Taula amb els estudiants actualment confinats:</p>
     <table class="table" id="table">
         <!-- header -->
@@ -48,8 +48,8 @@
             <th>Nom d'usuari</th>
             <!-- poseu aqui la llista dalumnes en forma: -->
             <!-- <th> nom.cognom </th> -->
-            $$LLISTA$$
         </tr>
+            %%LLISTA%%
     </table>
 </div>
 
