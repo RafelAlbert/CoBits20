@@ -1,10 +1,10 @@
-# BitsXLaMarato20
+# BitsXLaMarató20
 
 # Inspiració
 
 Atenent a la necessitat de garantir un entorn el més segur possible per a l'estudiantat, professorat i personal administratiu, en el marc de la pandèmia actual, hem decidit treballar en una aplicació per fer un seguiment de tots els possibles contagis de persones que hagin estat positives en una prova PCR.
 
-## Què fa?
+# Què fa?
 
 La nostra aplicació es fonamenta en dues vessants: una per l'estudiantat i l'altra pels gestors. 
 
