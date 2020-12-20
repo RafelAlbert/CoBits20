@@ -8,11 +8,52 @@ import (
   "encoding/json"
   "strconv"
   "time"
+  "os/exec"
 )
 
 func apiAdminEndpoint(w http.ResponseWriter, r *http.Request){
   fmt.Println(PROJECT_FOLDER +"/front/admin_login.html" )
   http.ServeFile(w, r, PROJECT_FOLDER +  "/front/admin_login.html")  
+}
+
+func apiNotificarEndpoint(w http.ResponseWriter, r *http.Request){
+  http.ServeFile(w, r, PROJECT_FOLDER +  "/front/notificar_infectat.html")  
+}
+
+func apiCercarEstudiantEndpoint(w http.ResponseWriter, r *http.Request){
+  alumne:=r.FormValue("usuari")
+  fmt.Println(alumne)
+
+  exec.Command("cp", PROJECT_FOLDER + "/front/estat_estudiant.html", PROJECT_FOLDER + "/front/estat_estudiant_" + alumne  + ".html").Run()
+
+  exec.Command("sed", "-i", "s/%%NOM\\.COGNOM%%/" + alumne + "/g", PROJECT_FOLDER + "/front/estat_estudiant_" + alumne + ".html").Run()
+
+  exec.Command("sed", "-i", "s/%%ESTAT%%/" + estatAlumne[alumne] + "/g", PROJECT_FOLDER + "/front/estat_estudiant_" + alumne + ".html").Run()
+
+  http.ServeFile(w, r, PROJECT_FOLDER + "/front/estat_estudiant_" + alumne + ".html")
+
+}
+
+func apiEstatActualEndpoint(w http.ResponseWriter, r *http.Request){
+  http.ServeFile(w, r, PROJECT_FOLDER +  "/front/estat_actual.html")  
+  
+}
+
+func apiEnviarNotificarInfectat(w http.ResponseWriter, r *http.Request){
+  usuari:=r.FormValue("usuari")
+  data:=r.FormValue("data")
+  
+  fmt.Println(usuari)
+  fmt.Println(data)
+  t, err := time.Parse(time.RFC3339, data+"T00:00:00Z")
+  if err != nil{
+    fmt.Println(err) 
+  }
+
+  fmt.Println(t)
+
+  http.ServeFile(w, r, PROJECT_FOLDER + "/front/notificar_infectat.html")
+  
 }
 
 func apiSentarseEndpoint(w http.ResponseWriter, r *http.Request){
@@ -71,7 +112,7 @@ func serveOAuthCallback(w http.ResponseWriter, r *http.Request) {
     if err != nil {
       fmt.Println(err)
     }
-    currentAlumne.Nom=al.Nom 
+    currentAlumne.Nom=al.Username 
     
     alum := Alumne {
       currentAlumne.Nom,
@@ -81,7 +122,9 @@ func serveOAuthCallback(w http.ResponseWriter, r *http.Request) {
 
     if contactes[currentAlumne.Nom] == nil {
       contactes[currentAlumne.Nom] = make(map[string]time.Time)
+      estatAlumne[currentAlumne.Nom] = "NO CONFINAT"
     }
+
 
     for _,v := range aules[currentAlumne.Aula] {
       fmt.Printf("%s  %s  %.2f %.2f %.2f %.2f\n", currentAlumne.Nom, v.Nom,currentAlumne.X, currentAlumne.Y, v.CoordX, v.CoordY)
