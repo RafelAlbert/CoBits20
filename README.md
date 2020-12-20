@@ -18,22 +18,22 @@ Quan es rebi la comunicació que una prova PCR realitzada a un estudiant o profe
 
 A més, s'oferiran diverses opcions per consultar l'estat actual de qualsevol usuari.
 
-# Com ho hem fet
+# Com ho hem fet?
 
 Hem treballat per deduir el funcionament de la nova API del Racó per l'accés dels usuaris, 
 
-# Reptes que ens hem trobat
+# Reptes que ens hem trobat?
 
 El principal repte ha estat comprendre l'API del Racó de la FIB i posteriorment processar les dades obtingudes. Refrescar els nostres coneixements sobre interfícies i JavaScript també ha suposat una certa complicació.
 
-# De què estem orgullosos
+# De què estem orgullosos?
 
 Aconseguir haver entès i comprès l'API del Racó per utilitzar-la en la identificació i obtenció de dades dels seus usuaris és motiu de satisfacció. Haver dissenyat una interfície senzilla però funcional, i ser capaços de processar i mostrar totes les dades amb les que treballem de forma adequada.
 
-# Què hem après
+# Què hem après?
 
 Hem après a treballar amb l'API del Racó, tan en la seva versió antiga com amb la nova, i també hem treballat amb el protocol d'identificació OAuth. També hem expandit els nostres coneixement en disseny d'interfícies web i l'ús de JavaScript.
 
-# Com seguir amb CoBits20
+# Com seguir amb CoBits20?
 
 Es pot expandir el projecte de moltes maneres diferents, ja que sense cap mena de dubte podria esdevenir una eina molt útil per facilitar el funcionament el més normal possible de les classes a la universitat, mantenint uns criteris estrictes per garantir la seguretat de totes les persones involucrades.
