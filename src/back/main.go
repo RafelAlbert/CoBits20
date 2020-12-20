@@ -14,6 +14,8 @@ func main() {
   router := mux.NewRouter()
 
   router.HandleFunc("/admin", apiAdminEndpoint).Methods("GET")
+  router.HandleFunc("/sentarse", serveLogin).Methods("GET")
+  router.HandleFunc("/callback", serveOAuthCallback).Methods("GET")
 
 
   log.Fatal(http.ListenAndServe(":3000", router))

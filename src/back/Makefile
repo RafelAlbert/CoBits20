@@ -10,7 +10,7 @@ run:
 	./$(BIN_NAME)
 
 
-DEP_LOCATION='github.com/gorilla/mux'
+DEP_LOCATION='github.com/gorilla/mux github.com/gomodule/oauth1/oauth'
 
 #deps: 
 #	for i in $(DEP_LOCATION); do go get $i; done
