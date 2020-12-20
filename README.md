@@ -14,7 +14,7 @@ En cada taula d'una aula hi haurà un codi QR, que l'estudiant escanejerà i, mi
 
 **Pels gestors**
 
-Quan es rebi la comunicació que una prova PCR realitzada a un estudiant o professor ha donat positiva, un dels gestors del sistema introduirà el nom d'usuari de la persona infectada i la data que es va realitzar la prova al sistema. Posteriorment, el sistema processarà tots els contactes sensibles susceptibles de ser infectats de la persona en qüestió, tots aquests contactes rebran una notificació per diversos canals, i hauran de confinar-se. Paral·lelament, els professors de les classes que tinguin com a mínim un alumne confinat també rebran un avís per saber que també han d'oferir l'opció de fer classes _ online _.
+Quan es rebi la comunicació que una prova PCR realitzada a un estudiant o professor ha donat positiva, un dels gestors del sistema introduirà el nom d'usuari de la persona infectada i la data que es va realitzar la prova al sistema. Posteriorment, el sistema processarà tots els contactes sensibles susceptibles de ser infectats de la persona en qüestió, tots aquests contactes rebran una notificació per diversos canals, i hauran de confinar-se. Paral·lelament, els professors de les classes que tinguin com a mínim un alumne confinat també rebran un avís per saber que també han d'oferir l'opció de fer classes _online_.
 
 A més, s'oferiran diverses opcions per consultar l'estat actual de qualsevol usuari.
 
